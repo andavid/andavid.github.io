@@ -4,6 +4,10 @@
 
 https://andavid.github.io/
 
+## GitHub 地址
+
+https://github.com/andavid/andavid.github.io.git
+
 ## 博客搭建
 
 博客基于 [Hexo](https://hexo.io/zh-cn/) 构建，使用 [NexT 主题](https://github.com/andavid/hexo-theme-next)，部署在 [GitHub Pages](https://pages.github.com/)。
