@@ -2025,7 +2025,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f4ffff;
+  background: #36ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2765,6 +2765,7 @@ hr {
   background: #e1e1e1;
 }
 .menu {
+  float: right;
   margin: 8px 0 0 0;
 }
 @media (max-width: 767px) {
