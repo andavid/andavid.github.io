@@ -80,8 +80,8 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:andavid/andavid.github.io.git
-  branch: public
+  repo: https://github.com/andavid/andavid.github.io.git
+  branch: master
 
 search:
   path: search.xml
