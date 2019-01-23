@@ -2025,7 +2025,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc6df;
+  background: #6cf1ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3018,4 +3018,13 @@ hr {
 .posts-expand .post-meta time {
   border-bottom: none;
   cursor: auto;
+}
+.links-of-author a:before,
+.links-of-author .exturl:before {
+  display: none;
+}
+.links-of-author a,
+.links-of-author .exturl {
+  margin-left: 10px;
+  margin-right: 10px;
 }
