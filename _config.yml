@@ -97,6 +97,6 @@ feed:
 
 symbols_count_time:
   symbols: true
-  time: true
+  time: false
   total_symbols: false
   total_time: false
