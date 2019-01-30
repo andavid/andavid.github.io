@@ -8,8 +8,8 @@
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git-guide</tag>
         <tag>git-flow</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -20,7 +20,7 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo-insert-local-image</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
