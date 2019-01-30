@@ -4,7 +4,7 @@ date: 2019-01-15 13:54:39
 categories:
 - Hexo
 tags:
-- hexo-insert-local-image
+- hexo
 ---
 
 ![](2019-01-15-insert-local-image-in-hexo/preview.png)
