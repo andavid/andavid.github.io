@@ -7,7 +7,7 @@ tags:
 - hexo
 ---
 
-![](2019-01-15-insert-local-image-in-hexo/preview.png)
+![](https://ws2.sinaimg.cn/large/006tKfTcly1g1g8m9ccaoj30zk09lqc5.jpg)
 
 在 Hexo 的官方文档 [资源文件夹章节](https://hexo.io/zh-cn/docs/asset-folders.html) 里，提供了几种插入本地图片的方法。但是，非常遗憾，无论采用哪种方式，在使用其他 Markdown 编辑器进行文章编写时，都无法预览图片。本文介绍了一种方法，可以完美解决此问题。
 
