@@ -127,7 +127,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JsBridge 源码解析">
 <meta property="og:url" content="https://andavid.github.io/2019/03/25/js-bridge/index.html">
-<meta property="og:site_name" content="andavid&#39;s blog">
+<meta property="og:site_name" content="JK Notes">
 <meta property="og:description" content="本文简单介绍了 JsBridge 的使用，并基于源码详细分析了 JS 和 Native 的相互调用流程。最后，简单谈了谈对 JsBridge 的一些理解，包括其通信机制、实现逻辑等。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g1g8k6yl85j31440m878h.jpg">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="andavid's blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="JK Notes" type="application/atom+xml">
 
 
 
@@ -154,7 +154,7 @@
   };
 </script>
 
-  <title>JsBridge 源码解析 | andavid's blog</title>
+  <title>JsBridge 源码解析 | JK Notes</title>
   
 
 
@@ -213,7 +213,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">andavid's blog</span>
+        <span class="site-title">JK Notes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -393,7 +393,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="andavid's blog">
+      <meta itemprop="name" content="JK Notes">
     </span>
 
     
@@ -626,7 +626,7 @@ note over Native: messageJson Example:\n{"responseData":"response data from Java
 Native->JS: loadUrl("javascript:_handleMessageFromNative(messageJson);")
 note over JS: _handleMessageFromNative(messageJson)
 note over JS: _dispatchMessageFromNative(messageJson)
-note over JS: responseCallback=responseCallbacks[message.responseId)\nresponseCallback(message.responseData)</textarea><textarea id="sequence-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant JS
+note over JS: responseCallback=responseCallbacks[message.responseId)\nresponseCallback(message.responseData)</textarea><textarea id="sequence-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script><textarea id="sequence-1-code" style="display: none">participant JS
 participant Native
 note over Native: callHandler(handlerName, data, responseCallback)
 note over Native: doSend(handlerName, data, responseCallback)
@@ -651,7 +651,7 @@ note over JS: messageQueueString Example：\n[{"responseId":"JAVA_CB_3_973","res
 JS->Native: iframe.src=yy://return/_fetchQueue/[messageQueueString]
 note over Native: shouldOverrideUrlLoading()
 note over Native: handlerReturnData()
-note over Native: CallBackFunction function = responseCallbacks.get(message.getResponseId())\nfunction.onCallBack(message.getResponseData())\nresponseCallbacks.remove(responseId)</textarea><textarea id="sequence-1-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script></p>
+note over Native: CallBackFunction function = responseCallbacks.get(message.getResponseId())\nfunction.onCallBack(message.getResponseData())\nresponseCallbacks.remove(responseId)</textarea><textarea id="sequence-1-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-1-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-1-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-1", options);</script></p>
 </li>
 </ul>
 
