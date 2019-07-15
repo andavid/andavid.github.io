@@ -130,15 +130,14 @@
 <meta property="og:site_name" content="JK Notes">
 <meta property="og:description" content="本文作为 Git 简明指南，简单介绍了 Git 工作流和 Git 内部实现原理，然后介绍了 Git 常用的配置，列举了 Git 常用的命令。最后，介绍了经典的 Git 分支管理流程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g1g8lndjgtj312w09lt94.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g1g8p6htn1j30p008wab0.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g1g8p6ftqcj30e40bpjsm.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g1g8p73h3nj30jn0q77f6.jpg">
-<meta property="og:updated_time" content="2019-03-26T07:47:18.527Z">
+<meta property="og:image" content="https://andavid.github.io/2019/01/16/git-guide/trees.png">
+<meta property="og:image" content="https://andavid.github.io/2019/01/16/git-guide/workflow.jpg">
+<meta property="og:image" content="https://andavid.github.io/2019/01/16/git-guide/git-flow.png">
+<meta property="og:updated_time" content="2019-07-15T01:54:28.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 简明指南">
 <meta name="twitter:description" content="本文作为 Git 简明指南，简单介绍了 Git 工作流和 Git 内部实现原理，然后介绍了 Git 常用的配置，列举了 Git 常用的命令。最后，介绍了经典的 Git 分支管理流程。">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g1g8lndjgtj312w09lt94.jpg">
+<meta name="twitter:image" content="https://andavid.github.io/2019/01/16/git-guide/trees.png">
 
 
 
@@ -512,13 +511,12 @@
       
 
       
-        <p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g1g8lndjgtj312w09lt94.jpg" alt=""></p>
-<p>本文作为 Git 简明指南，简单介绍了 Git 工作流和 Git 内部实现原理，然后介绍了 Git 常用的配置，列举了 Git 常用的命令。最后，介绍了经典的 Git 分支管理流程。</p>
+        <p>本文作为 Git 简明指南，简单介绍了 Git 工作流和 Git 内部实现原理，然后介绍了 Git 常用的配置，列举了 Git 常用的命令。最后，介绍了经典的 Git 分支管理流程。</p>
 <a id="more"></a>
 <h2 id="Git-工作流"><a href="#Git-工作流" class="headerlink" title="Git 工作流"></a>Git 工作流</h2><p>你的本地仓库由 git 维护的三棵“树”组成。第一个是你的工作目录（workspace），它持有实际文件；第二个是暂存区（Index），它像个缓存区域，临时保存你的改动；最后是 HEAD，它指向你最后一次提交的结果。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1g8p6htn1j30p008wab0.jpg" alt=""></p>
+<p><img src="/2019/01/16/git-guide/trees.png" alt=""></p>
 <p>git 状态的转换如下图所示：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g1g8p6ftqcj30e40bpjsm.jpg" alt=""></p>
+<p><img src="/2019/01/16/git-guide/workflow.jpg" alt=""></p>
 <h2 id="Git-内部实现原理"><a href="#Git-内部实现原理" class="headerlink" title="Git 内部实现原理"></a>Git 内部实现原理</h2><p>Git 是一个内容寻址文件系统。</p>
 <p>Git 的核心部分是一个简单的键值对数据库（key-value data store）。 你可以向该数据库插入任意类型的内容，它会返回一个键值，通过该键值可以在任意时刻再次检索（retrieve）该内容。</p>
 <p>每一次提交对应 .git/objects 目录下的一个文件。以该内容加上特定头部信息一起的 SHA-1 校验和为文件命名。 校验和的前两个字符用于命名子目录，余下的 38 个字符则用作文件名。</p>
@@ -549,7 +547,7 @@
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status                      # 查看工作区、暂存区的状态</span><br><span class="line">git clean -fd                   # 删除 untracked files</span><br><span class="line">git checkout -- &lt;file&gt;          # 丢弃工作区上某个文件的修改</span><br><span class="line">git checkout &lt;commit&gt; &lt;file&gt;    # 将某个文件的历史版本 checkout 到工作区</span><br><span class="line">git reset HEAD &lt;file&gt;           # 丢弃暂存区上某个文件的修改，重新放回工作区</span><br><span class="line">git reset --hard &lt;commit&gt;       # 版本回退</span><br><span class="line">git reflog                      # 查看命令历史，常用于帮助找回丢失掉的commit</span><br></pre></td></tr></table></figure>
 <h3 id="查看差异"><a href="#查看差异" class="headerlink" title="查看差异"></a>查看差异</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git diff              # 查看工作目录和暂存区之间的不同，「如果你现在把所有文件都 add，你会向暂存区中增加哪些内容」</span><br><span class="line">git diff --cached     # 查看暂存区和上一条提交之间的不同，「如果你立即输入 git commit，你将会提交什么」</span><br><span class="line">git diff HEAD         # 查看工作目录和上一条提交之间的不同，是上面两个的内容相加，「如果你现在把所有文件都 add 然后 git commit，你将会提交什么」</span><br><span class="line">git diff HEAD -- &lt;file&gt;                     # 查看工作区和版本库里面最新版本的区别</span><br><span class="line">git diff &lt;commit1&gt; &lt;commit2&gt; --name-only    # 比较两次提交的差异文件列表</span><br><span class="line">git diff &lt;commit1&gt; &lt;commit2&gt; --name-only | xargs zip update.zip          #  比较两次提交的差异，并将所有差异的文件打成一个 zip 包</span><br><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;    # 在合并改动之前，预览两个分支的差异</span><br></pre></td></tr></table></figure>
 <h3 id="储藏和恢复"><a href="#储藏和恢复" class="headerlink" title="储藏和恢复"></a>储藏和恢复</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git stash           # 把当前分支所有没提交的代码储藏起来</span><br><span class="line">git stash pop       # 恢复工作现场，并删除stash内容</span><br><span class="line">git stash list      # 查看储藏的工作现场</span><br><span class="line">git stash apply     # 恢复工作现场，stash内容并不删除</span><br></pre></td></tr></table></figure>
-<h2 id="Git-分支管理流程"><a href="#Git-分支管理流程" class="headerlink" title="Git 分支管理流程"></a>Git 分支管理流程</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1g8p73h3nj30jn0q77f6.jpg" alt=""></p>
+<h2 id="Git-分支管理流程"><a href="#Git-分支管理流程" class="headerlink" title="Git 分支管理流程"></a>Git 分支管理流程</h2><p><img src="/2019/01/16/git-guide/git-flow.png" alt=""></p>
 <h3 id="master-分支"><a href="#master-分支" class="headerlink" title="master 分支"></a>master 分支</h3><p>master 分支对应当前生产代码，严禁直接在这个分支上进行开发和提交。</p>
 <h3 id="develop-分支"><a href="#develop-分支" class="headerlink" title="develop 分支"></a>develop 分支</h3><ul>
 <li>develop 分支基于 master 分支创建。</li>

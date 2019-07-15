@@ -1,12 +1,8 @@
 # andavid's blog
 
-## 博客地址
+[博客地址](https://andavid.github.io/)
 
-https://andavid.github.io/
-
-## GitHub 地址
-
-https://github.com/andavid/andavid.github.io.git
+[GitHub 地址](https://github.com/andavid/andavid.github.io.git)
 
 ## 博客搭建
 
@@ -16,4 +12,3 @@ https://github.com/andavid/andavid.github.io.git
 
 * master 分支是默认分支，用来管理 Hexo 生成的静态网页，也是 GitHub Pages 用来部署的默认分支。
 * writer 分支是写作分支，用来管理 Hexo 的配置文件以及博客源代码文件。
-
