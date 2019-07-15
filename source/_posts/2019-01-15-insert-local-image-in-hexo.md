@@ -7,8 +7,6 @@ tags:
 - hexo
 ---
 
-![](https://ws2.sinaimg.cn/large/006tKfTcly1g1g8m9ccaoj30zk09lqc5.jpg)
-
 在 Hexo 的官方文档 [资源文件夹章节](https://hexo.io/zh-cn/docs/asset-folders.html) 里，提供了几种插入本地图片的方法。但是，非常遗憾，无论采用哪种方式，在使用其他 Markdown 编辑器进行文章编写时，都无法预览图片。本文介绍了一种方法，可以完美解决此问题。
 
 <!--more-->
@@ -90,7 +88,7 @@ link = link.substring(beginPos, endPos);
 
 根据文章链接截取得到 link，其中文章链接一般都是 `http://host:port/yyyy/mm/dd/post_name`，从第三个 `/` 后面取到的就是资源的绝对路径，然后对图片的 src 属性进行处理，去掉文章同名文件夹目录，仅保留图片名，然后与前面获取到的资源绝对路径进行拼接，得到图片的绝对路径。
 
-如果网站部署在子目录下，文章链接是这样的：  
+如果网站部署在子目录下，文章链接是这样的：
 `http://host:port/subdirectory/yyyy/mm/dd/post_name`
 这时应该从第四个 `/` 后面开始截取。因此，将代码修改如下：
 
